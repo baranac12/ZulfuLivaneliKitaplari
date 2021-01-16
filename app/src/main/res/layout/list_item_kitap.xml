@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgLogo"
+                android:layout_width="@dimen/logo_width"
+                android:layout_height="@dimen/logo_height"
+                android:layout_marginStart="@dimen/margin_8dp"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:layout_marginBottom="@dimen/margin_8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/txtKitap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:text="Kitap Adı :"
+                android:textColor="@color/txtColor"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imgLogo"
+                app:layout_constraintTop_toTopOf="@+id/imgLogo" />
+
+            <TextView
+                android:id="@+id/txtAdiC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24dp"
+                android:text="tools"
+                app:layout_constraintStart_toEndOf="@+id/txtKitap"
+                app:layout_constraintTop_toTopOf="@+id/txtKitap" />
+
+            <TextView
+                android:id="@+id/txtYazar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_12dp"
+                android:text="Yazar :"
+                android:textColor="@color/txtColor"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/txtKitap"
+                app:layout_constraintTop_toBottomOf="@+id/txtKitap" />
+
+            <TextView
+                android:id="@+id/txtYazarC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tools"
+                app:layout_constraintEnd_toEndOf="@+id/txtAdiC"
+                app:layout_constraintStart_toStartOf="@+id/txtAdiC"
+                app:layout_constraintTop_toTopOf="@+id/txtYazar" />
+
+            <TextView
+                android:id="@+id/txtKategori"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_12dp"
+                android:text=" Kategori :"
+                android:textColor="@color/txtColor"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/txtYazar"
+                app:layout_constraintTop_toBottomOf="@+id/txtYazar" />
+
+            <TextView
+                android:id="@+id/txtKategoriC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tools"
+                app:layout_constraintEnd_toEndOf="@+id/txtAdiC"
+                app:layout_constraintHorizontal_bias="0.529"
+                app:layout_constraintStart_toStartOf="@+id/txtAdiC"
+                app:layout_constraintTop_toTopOf="@+id/txtKategori" />
+
+            <TextView
+                android:id="@+id/txtSayfa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_12dp"
+                android:text="Sayfa Sayısı :"
+                android:textColor="@color/txtColor"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/txtKategori"
+                app:layout_constraintTop_toBottomOf="@+id/txtKategori" />
+
+            <TextView
+                android:id="@+id/txtSayfaSayisiC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tools"
+                app:layout_constraintEnd_toEndOf="@+id/txtAdiC"
+                app:layout_constraintStart_toStartOf="@+id/txtAdiC"
+                app:layout_constraintTop_toTopOf="@+id/txtSayfa" />
+
+            <TextView
+                android:id="@+id/txtTarih"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_12dp"
+                android:text="Tarih :"
+                android:textColor="@color/txtColor"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/txtSayfa"
+                app:layout_constraintTop_toBottomOf="@+id/txtSayfa" />
+
+            <TextView
+                android:id="@+id/txtTarihC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tools"
+                app:layout_constraintEnd_toEndOf="@+id/txtAdiC"
+                app:layout_constraintStart_toStartOf="@+id/txtAdiC"
+                app:layout_constraintTop_toTopOf="@+id/txtTarih" />
+
+            <TextView
+                android:id="@+id/txtDil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_12dp"
+                android:text="Dil :"
+                android:textColor="@color/txtColor"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/txtTarih"
+                app:layout_constraintTop_toBottomOf="@+id/txtTarih" />
+
+            <TextView
+                android:id="@+id/txtDilC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tools"
+                app:layout_constraintEnd_toEndOf="@+id/txtAdiC"
+                app:layout_constraintStart_toStartOf="@+id/txtAdiC"
+                app:layout_constraintTop_toTopOf="@+id/txtDil" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

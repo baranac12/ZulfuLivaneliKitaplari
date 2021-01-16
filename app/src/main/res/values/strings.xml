@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Zülfü Livaneli En Çok Okunan Kitapları </string>
+    <string name="baslikAd">Kitap Adı :</string>
+    <string name="baslikYazar">Yazar  :</string>
+    <string name="baslikKategori">Kategori :</string>
+    <string name="baslikSayfa">Sayfa Sayısı :</string>
+    <string name="baslikDil">Dil :</string>
+    <string name="baslikTarih">Tarih :</string>
+
+    <string name="internetUyariBaslik">Bağlantı Hatası</string>
+    <string name="internetUyariMesaj">İnternet Bağlantısı Yok, uygulama için açmak istermisiniz ?</string>
+    <string name="internetUyariButon1">Evet</string>
+    <string name="internetUyariButon2">Çık</string>
+
+    <string name="dialogMessage">Lütfen Bekleyiniz</string>
+
+    <string name="onBackPressMessage">Çıkış Yapmak istiyor musunuz?</string>
+    <string name="onBackPressButton1">Çıkış Yap</string>
+    <string name="onBackPressButton2">İptal</string>
+</resources>

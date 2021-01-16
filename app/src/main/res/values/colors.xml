@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="rcvBackgroundcolor">#FFFFFF</color>
+    <color name="backgroundColor">#EDEDED</color>
+
+    <color name="txtColor">#CE000000</color>
+    <color name="white">#CEF4F4F4</color>
+
+
+
+    <color name="teal_200">#80CBC4</color>
+    <color name="teal_700">#00796B</color>
+    <color name="black">#000000</color>
+    <color name="purple_200">#C807FE</color>
+    <color name="purple_700">#7B1FA2</color>
+
+</resources>

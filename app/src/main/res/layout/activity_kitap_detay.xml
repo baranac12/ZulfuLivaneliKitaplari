@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.KitapDetayActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgDetayKapak"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/kapak_height_200dp"
+                android:paddingTop="@dimen/margin_12dp"
+                android:scaleType="fitXY"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/txtKitapAdi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2dp"
+                android:background="@color/rcvBackgroundcolor"
+                android:padding="@dimen/margin_12dp"
+                android:textAlignment="center"
+                android:textColor="@color/txtColor"
+                android:textSize="@dimen/text_size_24sp"
+                android:textStyle="bold"
+                tools:text="kitapAdi" />
+
+            <TextView
+                android:id="@+id/txtYazarAdi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2dp"
+                android:background="@color/rcvBackgroundcolor"
+                android:padding="@dimen/margin_12dp"
+                android:textAlignment="center"
+                android:textColor="@color/txtColor"
+                android:textSize="@dimen/text_size_20sp"
+                android:textStyle="bold"
+                tools:text="yazarAdi" />
+
+            <TextView
+                android:id="@+id/txtKitapKategori"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2dp"
+                android:background="@color/rcvBackgroundcolor"
+                android:padding="@dimen/margin_4dp"
+                android:textAlignment="center"
+                android:textColor="@color/txtColor"
+                android:textStyle="bold"
+                tools:text="Kategori" />
+
+            <TextView
+                android:id="@+id/txtKitapSayfa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2dp"
+                android:background="@color/rcvBackgroundcolor"
+                android:padding="@dimen/margin_4dp"
+                android:textAlignment="center"
+                android:textColor="@color/txtColor"
+                android:textStyle="bold"
+                tools:text="sayfaSayisi" />
+
+            <TextView
+                android:id="@+id/txtKitapTarih"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2dp"
+                android:background="@color/rcvBackgroundcolor"
+                android:padding="@dimen/margin_4dp"
+                android:textAlignment="center"
+                android:textColor="@color/txtColor"
+                android:textStyle="bold"
+                tools:text="Tarihi" />
+
+            <TextView
+                android:id="@+id/txtKitapDil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2dp"
+                android:background="@color/rcvBackgroundcolor"
+                android:padding="@dimen/margin_4dp"
+                android:textAlignment="center"
+                android:textColor="@color/txtColor"
+                android:textStyle="bold"
+                tools:text="Dil" />
+
+            <TextView
+                android:id="@+id/txtAciklama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2dp"
+                android:background="@color/rcvBackgroundcolor"
+                android:padding="@dimen/margin_12dp"
+                android:textColor="@color/txtColor"
+                android:textSize="@dimen/margin_16dp"
+                tools:text="Aciklama" />
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
