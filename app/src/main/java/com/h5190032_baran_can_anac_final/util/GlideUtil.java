@@ -11,7 +11,7 @@ public class GlideUtil {
     {
         Glide.with(context)
                 .load(url)
-                .error(R.drawable.livanelierror)
+                .error(R.drawable.error)
                 .centerCrop()
                 .into(img);
     }
