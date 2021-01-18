@@ -31,6 +31,12 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
+import static com.h5190032_baran_can_anac_final.R.string.dialogMessage;
+import static com.h5190032_baran_can_anac_final.R.string.internetUyariBaslik;
+import static com.h5190032_baran_can_anac_final.R.string.onBackPressButton1;
+import static com.h5190032_baran_can_anac_final.R.string.onBackPressButton2;
+import static com.h5190032_baran_can_anac_final.R.string.onBackPressMessage;
+
 
 public class ListeActivity extends AppCompatActivity {
     RecyclerView rcvKitap;
@@ -50,7 +56,7 @@ public class ListeActivity extends AppCompatActivity {
     {
 
         ProgressDialog progressDialog = new ProgressDialog(ListeActivity.this);
-        progressDialog.setMessage("Lütfen Bekleyiniz...");
+        progressDialog.setMessage(getResources().getString(dialogMessage));
 
 
         new Service().getServiceApi().kitaplariGetir()
@@ -115,14 +121,14 @@ public class ListeActivity extends AppCompatActivity {
     public void onBackPressed(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(false);
-        builder.setMessage("Çıkış Yapmak istiyor musunuz?");
-        builder.setPositiveButton("Çıkış Yap", new DialogInterface.OnClickListener() {
+        builder.setMessage(getResources().getString(onBackPressMessage));
+        builder.setPositiveButton(getResources().getString(onBackPressButton1), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 finish();
             }
         });
-        builder.setNegativeButton("İptal", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(getResources().getString(onBackPressButton2), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 

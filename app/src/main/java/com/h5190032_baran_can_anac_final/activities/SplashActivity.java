@@ -22,7 +22,9 @@ import com.h5190032_baran_can_anac_final.util.NetworkUtil;
 
 import java.util.List;
 
+import static com.h5190032_baran_can_anac_final.R.string.internetUyariBaslik;
 import static com.h5190032_baran_can_anac_final.R.string.internetUyariButon1;
+import static com.h5190032_baran_can_anac_final.R.string.internetUyariButon2;
 import static com.h5190032_baran_can_anac_final.R.string.internetUyariMesaj;
 
 public class SplashActivity extends AppCompatActivity {
@@ -58,15 +60,15 @@ public class SplashActivity extends AppCompatActivity {
         }else{
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setCancelable(false);
-            builder.setTitle("Bağlantı Hatası");
-            builder.setMessage("İnternet Bağlantısı Yok, uygulama için açmak istermisiniz ?");
-            builder.setPositiveButton("Evet", new DialogInterface.OnClickListener() {
+            builder.setTitle(getResources().getString(internetUyariBaslik));
+            builder.setMessage(getResources().getString(internetUyariMesaj));
+            builder.setPositiveButton(getResources().getString(internetUyariButon1), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
                 }
             });
-            builder.setNegativeButton("Hayır", new DialogInterface.OnClickListener() {
+            builder.setNegativeButton(getResources().getString(internetUyariButon2), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
 
