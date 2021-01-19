@@ -2,7 +2,8 @@ package com.h5190032_baran_can_anac_final.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
+//bu classda githubdaki json dosyamızdan veri çekmek için değişkenler oluşturuldu.
+//daha sonrasında çekilen verileri set ve get edilicek değişkenler belirtildi.
 public class Kitap {
 
     @SerializedName("adi")

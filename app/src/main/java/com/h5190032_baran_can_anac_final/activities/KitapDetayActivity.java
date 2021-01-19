@@ -17,7 +17,7 @@ import com.h5190032_baran_can_anac_final.util.ObjectUtil;
 public class KitapDetayActivity extends AppCompatActivity {
     ImageView imgKapak;
     TextView txtKitapAdi,txtYazarAdi,txtKitapKategori,txtKitapDil,txtKitapSayfaSayisi,txtKitapTarih,txtAciklama;
-
+    //açılışta çalışan metottur ve activity_kitap_detay set edilmiştir
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +27,9 @@ public class KitapDetayActivity extends AppCompatActivity {
 
     }
     private void init(){
+        //bir önceki sayfadan taşıdan veri bu sayfada tasinanKitapString e atandı.
+        //atanan veriler kitap adında objeye atandı.
+        //daha sonra ekrana basılması için değerler set edildi ve ekrana resim basıldı.
         String tasinanKitapString = getIntent().getStringExtra(Constants.TIKLANAN_KITAP_BASLIGI);
         Kitap kitap = ObjectUtil.jsonStringToKitap(tasinanKitapString);
 

@@ -42,6 +42,8 @@ public class ListeActivity extends AppCompatActivity {
     RecyclerView rcvKitap;
     ImageView imgBanner;
     String resimUrl="https://raw.githubusercontent.com/baranac12/okulFinal/main/zlivaneliAnaSayfaKapak.png";
+
+    //açılışta çalışan metottur ve activity_liste set edilmiştir
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,39 +54,36 @@ public class ListeActivity extends AppCompatActivity {
         kapakResminiAl();
         kitaplariGetir();
     }
+
     void  kitaplariGetir()
     {
-
+        // progress dialog ile liste yüklenene kadar ekranda bilgi vermesi sağlandı.
         ProgressDialog progressDialog = new ProgressDialog(ListeActivity.this);
         progressDialog.setMessage(getResources().getString(dialogMessage));
 
-
-        new Service().getServiceApi().kitaplariGetir()
+        //kitap adında bir liste oluşturulduktan sonra onComplete fonksiyonu ile listedeki kitaplar liste boyutu kadar jsondan çekilerek recycleView içine basıldı. Ve ekranda ki progress dialog kapatıldı.
+        new Service().getServiceApi().kitaplariGetir()//servis çağrıldı
                 .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<List<Kitap>>() {
+                .observeOn(AndroidSchedulers.mainThread())//gözlemlendi, değişiklere bakıldı
+                .subscribe(new Observer<List<Kitap>>() { // üye olundu ve gözlemci kitap listesini vericek
 
-                    List<Kitap> kitaplar=new ArrayList<>();
+                    List<Kitap> kitaplar=new ArrayList<>(); //kitaplar adında bir liste oluşturuldu
 
                     @Override
                     public void onSubscribe(Disposable d) {
                         progressDialog.show();
-                    }
+                    }//bu fonksiyon servise abone olduğuda progress dialog çalıştırıldı
 
                     @Override
                     public void onNext(List<Kitap> kitapList) {
                         kitaplar=kitapList;
-                    }
-
+                    } //her bir nexte veriler liste eklendi.
                     @Override
                     public void onError(Throwable e) {
-
                     }
-
                     @Override
-                    public void onComplete()
+                    public void onComplete() //bu fonksiyonda veriler oluşturuldu ve ekrana basıldı.
                     {
-
                         if(kitaplar.size()>0) {
                             ObjectPrinter.printJson(kitaplar);
                             initRecycleView(kitaplar);
@@ -93,11 +92,16 @@ public class ListeActivity extends AppCompatActivity {
                     }
                 });
     }
+
+       // glide kullanılarak tanımlanan imgBannerın içine atanan url ile ekrana resim basıldı.
     private void kapakResminiAl()
     {
         imgBanner =findViewById(R.id.imgBanner);
         GlideUtil.resmiIndiripGoster(getApplicationContext(),resimUrl,imgBanner);
     }
+     // bu fonksiyonda bir adaptör oluşturup bir liste ve tıklanma özelliği verildi.
+    //tıklanma özelliğinde  listede tıklanan kitabın içeriğine openNextActivity fonksiyonu ile geçildi.
+    //daha sonrasında tıklanan kitabın içerikleri yeni sayfada ekrana basıldı.
     private void initRecycleView(List<Kitap> kitapList){
         rcvKitap = findViewById(R.id.rcvKitaplar);
 
@@ -111,12 +115,18 @@ public class ListeActivity extends AppCompatActivity {
         rcvKitap.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         rcvKitap.setAdapter(kitapAdapter);
     }
+    // bu fonksiyonda bir sonraki ekrana veri taşımak için nextActivityIntent adında nesne oluşturuldu.Ve sonraki sayfa olarak KitapDetayActiviy classı seçildi.
+    // tiklananKitapString Adında bir string oluşturarak tıklanan kitabın verilerini stringe çevirerek değişkene atadık..
+    //Sonraki Sayfa geçildi.
     private void openNextActivity(Kitap tiklananKitap){
         Intent nextActivityIntent= new Intent(getApplicationContext(), KitapDetayActivity.class);
         String tiklananKitapString = ObjectUtil.kitapToJsonString(tiklananKitap);
         nextActivityIntent.putExtra(Constants.TIKLANAN_KITAP_BASLIGI,tiklananKitapString);
         startActivity(nextActivityIntent);
     }
+
+    //bu fonksiyonda ListeActiviy sayfasıda geri tuşuna basıldığında Alert Dİalog ile kullanıcaya çıkmak isteyip istemediğini soruyoruz.
+    //Çıkış yap butonuna basılırsa uygulama kapatalıcak. Eğer iptale basarsa dialog kapanıcak.
     @Override
     public void onBackPressed(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

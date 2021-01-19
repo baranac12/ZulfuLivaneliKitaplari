@@ -29,14 +29,16 @@ import static com.h5190032_baran_can_anac_final.R.string.internetUyariMesaj;
 
 public class SplashActivity extends AppCompatActivity {
 
+    //açılışta çalışan metottur ve activity_spalash set edilmiştir
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         init();
-
     }
     private void init(){
+
+        //bu fonksiyon 3 saniyelik bir timer başlatır ve bitince internetKontrol fonksiyonunu çalıştırır.
         CountDownTimer countDownTimer = new CountDownTimer(3000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -49,11 +51,15 @@ public class SplashActivity extends AppCompatActivity {
         };
         countDownTimer.start();
     }
+        // bu fonksiyon bir sonraki sayfaya veri taşımak için secondActivityIntent adında nesne oluşturulmuş ve ListeActivity classına taşınmıştır.
     private void openNextActivity(){
         Intent secondActivityIntent= new Intent(getApplicationContext(), ListeActivity.class);
         startActivity(secondActivityIntent);
         finish();
     }
+
+    //bu fonksiyonda internet kontrolü yapılıyor. Eğer internet varsa openNextActivity fonksiyonu çalışır.Eğer internet yoksa Alert dialog oluşturulup internet olmadığına dair bir bilgi verilir.
+    //bu bilgide interneti açmak için bir buton ve uygulamadan çıkmak için bir buton bulunur. İnternetini açmak isteyen kullanıcı evet butonuna basarak telefon ayarlarına yönlendirilir.
     private void internetKontrol(){
         if (NetworkUtil.internetKontrol(getApplicationContext())){
             openNextActivity();

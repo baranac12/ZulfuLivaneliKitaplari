@@ -12,7 +12,7 @@ import com.h5190032_baran_can_anac_final.R;
 public class KitapViewHolder extends RecyclerView.ViewHolder {
     TextView txtAdi,txtYazar,txtSayfa,txtKategori,txtTarih,txtDil;
     ImageView imgLogo;
-
+        //bu fonksiyonda viewHolderdaki nesnelerle bağlantı kuruldu.
     public KitapViewHolder(@NonNull View itemView ,KitapAdapter.OnItemClickListener listener) {
         super(itemView);
         txtAdi=itemView.findViewById(R.id.txtAdiC);
@@ -22,7 +22,7 @@ public class KitapViewHolder extends RecyclerView.ViewHolder {
         txtTarih=itemView.findViewById(R.id.txtTarihC);
         txtDil=itemView.findViewById(R.id.txtDilC);
         imgLogo=itemView.findViewById(R.id.imgLogo);
-
+        //tıklanma özelliği verildi.
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

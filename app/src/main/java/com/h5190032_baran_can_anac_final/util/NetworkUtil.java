@@ -10,7 +10,8 @@ import android.provider.Settings;
 import androidx.appcompat.app.AlertDialog;
 
 import static androidx.core.content.ContextCompat.getSystemService;
-
+//bu classda internet kontrolü yapılması için bir fonksiyon oluşturuldu.
+//networkInfa değeri null değilse ve networkInfa kullanılabilir ve networkInfa bağlıysa true eğer bu şartlar doğru değilse false dönecektir.
 public class NetworkUtil {
     public static boolean internetKontrol(Context context){
         ConnectivityManager connectivityManager =(ConnectivityManager) context.getSystemService(context.CONNECTIVITY_SERVICE);

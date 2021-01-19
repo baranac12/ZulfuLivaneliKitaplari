@@ -8,6 +8,6 @@ import io.reactivex.Observable;
 import retrofit2.http.GET;
 
 public interface ServiceApi {
-    //
+    //internetten çekilecek json dosyasının ismi yazılarak listedeye get edildi.
     @GET("zlivaneliKitapApi.json") Observable<List<Kitap>> kitaplariGetir();
 }

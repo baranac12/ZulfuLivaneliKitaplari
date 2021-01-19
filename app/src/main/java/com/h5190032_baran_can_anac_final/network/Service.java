@@ -14,37 +14,39 @@ public class Service {
 
 
     private static Retrofit retrofit;
+    //bu fonksiyonda eğer retrofit boş ise nesneyi oluşturmasını sağladık.
+    //eğer boş değilse retrofiti döndürmesini sağladık.
     private static Retrofit getRetrofit() {
 
         if (retrofit == null) {
-            retrofit = new Retrofit.Builder()
-                    .baseUrl(Constants.BASE_URL)
-                    .client(getOkHttpClient())
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            retrofit = new Retrofit.Builder() //retroif inşa edildi.
+                    .baseUrl(Constants.BASE_URL)//url verildi
+                    .client(getOkHttpClient())// client verildi
+                    .addConverterFactory(GsonConverterFactory.create())//gsona çevrildi
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())//adaptor belirtildi
                     .build();
         }
         return retrofit;
     }
-
+    //istek atmak için client oluşturuldu.
     static OkHttpClient okHttpClient;
     private static OkHttpClient getOkHttpClient()
     {
         if(okHttpClient == null) {
-            okHttpClient =  new OkHttpClient().newBuilder().build();
+            okHttpClient =  new OkHttpClient().newBuilder().build(); //eğer nullsa client inşa edildi
         }
 
-        return okHttpClient;
+        return okHttpClient;//null değilse olanı döndürdü
     }
 
-
+    //servise erişebilmek için serviceApi oluşturuldu.
     ServiceApi serviceApi;
     public ServiceApi getServiceApi() {
 
         if(serviceApi == null) {
             serviceApi = getRetrofit().create(ServiceApi.class);
         }
-
+        //retrofiti oluşturup ServiceApi verildi ve serviceApi döndürüldü.
         return serviceApi;
     }
 }
